@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #353b47;
+        }
+        .converter {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 100px;
+            border: 3px solid #608145;
+            border-radius: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>Centimeter to Feet Converter</h1>
+        <label for="centimeter">Enter Centimeters:</label>
+        <input type="number" id="centimeter" placeholder="Centimeters">
+        <button onclick="convertLength()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertLength() {
+            // Get the input value (Centimeters)
+            var centimeters = parseFloat(document.getElementById("centimeter").value);
+
+            // Check if the input is a valid number
+            if (!isNaN(centimeters)) {
+                // Convert Centimeters to Feet
+                var feet = centimeters / 30.48;
+
+                // Display the result
+                document.getElementById("result").innerHTML = centimeters + " Centimeters is approximately " + feet.toFixed(2) + " Feet.";
+            } else {
+                // Handle invalid input
+                document.getElementById("result").innerHTML = "Please enter a valid number for Centimeters.";
+            }
+        }
+    </script>
+</body>
+</html>
